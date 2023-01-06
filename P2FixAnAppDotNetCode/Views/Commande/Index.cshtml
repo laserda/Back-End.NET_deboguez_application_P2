@@ -1,0 +1,29 @@
+﻿@model P2FixAnAppDotNetCode.Models.Commande
+
+<h2>@Localizer["OrderTitle"]</h2>
+
+<div asp-validation-summary="All" class="text-danger"></div>
+<form asp-action="Index" method="post">
+    <h3>@Localizer["ShipTo"]</h3>
+    <div class="mb-3">
+        <label>@Localizer["Name"]*:</label><input asp-for="Nom" class="form-control" />
+    </div>
+    <h3>@Localizer["Address"]</h3>
+    <div class="mb-3">
+        <label>@Localizer["Location"]*:</label><input asp-for="Adresse" class="form-control" />
+    </div>
+    <div class="row">
+        <div class="col-auto">
+            <label>@Localizer["City"]*:</label><input asp-for="Ville" class="form-control" />
+        </div>
+        <div class="col-auto">
+            <label>@Localizer["Zip"]:</label><input asp-for="CodePostal" class="form-control" />
+        </div>
+        <div class="col-auto">
+            <label>@Localizer["Country"]*:</label><input asp-for="Pays" class="form-control" />
+        </div>
+    </div>
+    <div class="text-center mt-5">
+        <input class="btn btn-primary" type="submit" value="@Localizer["CompleteOrder"]" />
+    </div>
+</form>
