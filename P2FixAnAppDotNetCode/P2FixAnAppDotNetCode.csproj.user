@@ -6,4 +6,5 @@
   <PropertyGroup>
     <ActiveDebugProfile>P2FixAnAppDotNetCode</ActiveDebugProfile>
   </PropertyGroup>
+  <ItemGroup />
 </Project>

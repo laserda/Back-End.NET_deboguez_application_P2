@@ -30,36 +30,36 @@
   </ItemGroup>
 
   <ItemGroup>
-    <UpToDateCheckInput Remove="Views\Cart\Index.cshtml" />
+    <UpToDateCheckInput Remove="Views\Panier\Index.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
-    <_ContentIncludedByDefault Remove="Views\Cart\Index.cshtml" />
-    <_ContentIncludedByDefault Remove="Views\Order\Completed.cshtml" />
-    <_ContentIncludedByDefault Remove="Views\Order\Index.cshtml" />
-    <_ContentIncludedByDefault Remove="Views\Product\Index.cshtml" />
-    <_ContentIncludedByDefault Remove="Views\Shared\Components\CartSummary\Default.cshtml" />
-    <_ContentIncludedByDefault Remove="Views\Shared\Components\LanguageSelector\Default.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Panier\Index.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Commande\Completed.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Commande\Index.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Produit\Index.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Shared\Components\ResumePanier\Default.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Shared\Components\SelectionLangage\Default.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
-    <UpToDateCheckInput Remove="Views\Order\Completed.cshtml" />
+    <UpToDateCheckInput Remove="Views\Commande\Completed.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
-    <UpToDateCheckInput Remove="Views\Order\Index.cshtml" />
+    <UpToDateCheckInput Remove="Views\Commande\Index.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
-    <UpToDateCheckInput Remove="Views\Product\Index.cshtml" />
+    <UpToDateCheckInput Remove="Views\Produit\Index.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
-    <UpToDateCheckInput Remove="Views\Shared\Components\CartSummary\Default.cshtml" />
+    <UpToDateCheckInput Remove="Views\Shared\Components\ResumePanier\Default.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
-    <UpToDateCheckInput Remove="Views\Shared\Components\LanguageSelector\Default.cshtml" />
+    <UpToDateCheckInput Remove="Views\Shared\Components\SelectionLangage\Default.cshtml" />
   </ItemGroup>
 
   <ItemGroup>

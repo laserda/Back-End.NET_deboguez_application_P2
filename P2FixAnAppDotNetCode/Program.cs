@@ -5,16 +5,16 @@ using P2FixAnAppDotNetCode.Models.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+// Ajout des services au container.
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddLocalization(opts => { opts.ResourcesPath = "Resources"; });
-builder.Services.AddSingleton<ICart, Cart>();
-builder.Services.AddSingleton<ILanguageService, LanguageService>();
-builder.Services.AddTransient<IProductService, ProductService>();
-builder.Services.AddTransient<IProductRepository, ProductRepository>();
-builder.Services.AddTransient<IOrderService, OrderService>();
-builder.Services.AddTransient<IOrderRepository, OrderRepository>();
+builder.Services.AddSingleton<IPanier, Panier>();
+builder.Services.AddSingleton<ILangageService, LangageService>();
+builder.Services.AddTransient<IProduitService, ProduitService>();
+builder.Services.AddTransient<IProduitRepository, ProduitRepository>();
+builder.Services.AddTransient<ICommandeService, CommandeService>();
+builder.Services.AddTransient<ICommandeRepository, CommandeRepository>();
 builder.Services.AddMemoryCache();
 builder.Services.AddSession();
 builder.Services.AddMvc()
@@ -23,11 +23,11 @@ builder.Services.AddMvc()
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// Configurer la pipeline HTTP.
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+    // La valeur par défaut pour HSTS est 30 jours. Vous pouvez la changer pour la production, voir https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
 
@@ -48,6 +48,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Product}/{action=Index}/{id?}");
+    pattern: "{controller=Produit}/{action=Index}/{id?}");
 
 app.Run();
