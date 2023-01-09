@@ -23,8 +23,8 @@ namespace P2FixAnAppDotNetCode.Models.Repositories
         {
             int id = 0;
             _produits.Add(new Produit(++id, 10, 92.50, "Echo Dot", "(2nde Génération) - Noir"));
-            _produits.Add(new Produit(++id, 20, 9.99, "Anker 3ft / 0.9m Nylon Braided", "Câble micro USB sans enchevêtrement"));
-            _produits.Add(new Produit(++id, 30, 69.99, "JVC HAFX8R Headphone", "Riptidz, Intra occulaire"));
+            _produits.Add(new Produit(++id, 20, 9.99, "Câble Anker 90cm en nylon tressé", "Câble micro USB anti-noeud"));
+            _produits.Add(new Produit(++id, 30, 69.99, "Écouteurs JVC HAFX8R", "Riptidz, Intra-auriculaire"));
             _produits.Add(new Produit(++id, 40, 32.50, "VTech CS6114 DECT 6.0", "Téléphone sans fil"));
             _produits.Add(new Produit(++id, 50, 895.00, "NOKIA OEM BL-5J", "Téléphone portable"));
         }
