@@ -58,7 +58,6 @@ namespace P2FixAnAppDotNetCode.Models.Repositories
         {
             Produit produit = _produits.First(p => p.Id == idProduit);
             produit.Stock = produit.Stock - quantiteASupprimer;
-
             if (produit.Stock == 0)
                 _produits.Remove(produit);
         }
