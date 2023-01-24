@@ -12,8 +12,12 @@ namespace P2FixAnAppDotNetCode.Models.Repositories
 
         public ProduitRepository()
         {
-            _produits = new List<Produit>();
-            GenereDesProduits();
+            if(_produits == null) //Ajouter par IGOR
+            {
+                _produits = new List<Produit>();
+                GenereDesProduits();
+            }
+            
         }
 
         /// <summary>
@@ -36,6 +40,15 @@ namespace P2FixAnAppDotNetCode.Models.Repositories
         {
             List<Produit> liste = _produits.Where(p => p.Stock > 0).OrderBy(p => p.Nom).ToList();
             return liste.ToArray();
+        }
+        /// <summary>
+        /// Récupère un produit selon l'Id (Ajouter par IGOR)
+        /// </summary>
+        /// <returns></returns>
+        public Produit GetUnProduits(int id)
+        {
+            Produit produit = _produits.First(p => p.Id == id);
+            return produit;
         }
 
         /// <summary>

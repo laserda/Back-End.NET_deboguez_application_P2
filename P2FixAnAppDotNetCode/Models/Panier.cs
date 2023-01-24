@@ -8,6 +8,14 @@ namespace P2FixAnAppDotNetCode.Models
     /// </summary>
     public class Panier : IPanier
     {
+        //Ajouter par Igor
+        private static List<LignePanier> _lignesDuPanier;
+
+        public Panier()
+        {
+            _lignesDuPanier = new List<LignePanier>();
+        }
+
         /// <summary>
         /// Propriété en lecture seule pour affichage seulement
         /// </summary>
@@ -19,7 +27,8 @@ namespace P2FixAnAppDotNetCode.Models
         /// <returns></returns>
         private List<LignePanier> GetListeDesLignesDuPanier()
         {
-            return new List<LignePanier>();
+            //return new List<LignePanier>();
+            return _lignesDuPanier;
         }
 
         /// <summary>
@@ -28,6 +37,22 @@ namespace P2FixAnAppDotNetCode.Models
         public void AjouterElement(Produit produit, int quantite)
         {
             // TODO implementer la méthode
+            //Ajouter par Igor
+            var rechercherProduit = _lignesDuPanier.FirstOrDefault(l => l.Produit.Id == produit.Id);
+            if (rechercherProduit != null)
+            {
+                rechercherProduit.Quantite += quantite;
+            }
+            else
+            {
+                _lignesDuPanier.Add(new LignePanier
+                {
+                    Produit = produit,
+                    Quantite = quantite
+                });
+            }
+            
+
         }
 
         /// <summary>
@@ -42,7 +67,8 @@ namespace P2FixAnAppDotNetCode.Models
         public double GetValeurTotale()
         {
             // TODO implementer la méthode
-            return 0.0;
+            //Ajouter par IGOR
+            return _lignesDuPanier.Sum(l => l.Produit.Prix*l.Quantite);
         }
 
         /// <summary>
@@ -51,7 +77,16 @@ namespace P2FixAnAppDotNetCode.Models
         public double GetValeurMoyenne()
         {
             // TODO implementer la méthode
-            return 0.0;
+            //Ajouter par IGOR
+            try
+            {
+                return _lignesDuPanier.Average(l => l.Produit.Prix*l.Quantite);
+            }
+            catch (Exception e)
+            {
+                return 0.0;
+            }
+            
         }
 
         /// <summary>

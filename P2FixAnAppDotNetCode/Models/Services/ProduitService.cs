@@ -32,7 +32,9 @@ namespace P2FixAnAppDotNetCode.Models.Services
         public Produit GetProduitParId(int id)
         {
             // TODO implementer la méthode
-            return null;
+            //Ajouter par IGOR
+            var produit = _produitRepository.GetUnProduits(id);
+            return produit;
         }
 
         /// <summary>
@@ -42,6 +44,14 @@ namespace P2FixAnAppDotNetCode.Models.Services
         {
             // TODO implementer la méthode
             // met à jour l'inventaire de produit en utilisant la méthode _produitRepository.MetAJourLaQuantiteDunProduit().
+            //Ajouer par IGOR             
+            var lignesPaniers = panier.Lignes.ToList();
+            foreach(var item in lignesPaniers)
+            {
+                _produitRepository.MetAJourLaQuantiteDunProduit(item.Produit.Id,item.Quantite);
+            }
+            
+            
         }
     }
 }

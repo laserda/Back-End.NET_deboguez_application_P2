@@ -25,6 +25,19 @@ namespace P2FixAnAppDotNetCode.Models.Services
             string culture = "";
             // TODO completer le code
             // Le langage par défaut est "en", le Français est "fr" et l'espagnol est "es".
+            //Aouter par IGOR
+            switch(langage)
+            {
+                case "French":
+                    culture = "fr";
+                    break;
+                case "Spanish":
+                    culture = "es";
+                    break;
+                default:
+                    culture = "en";
+                    break;
+            }
             
             return culture;
         }

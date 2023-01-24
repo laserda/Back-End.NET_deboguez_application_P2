@@ -28,6 +28,7 @@ namespace P2FixAnAppDotNetCode.Controllers
             {
                 ModelState.AddModelError("", _localiseur["CartEmpty"]);
             }
+
             if (ModelState.IsValid)
             {
                 commande.Lignes = (_panier as Panier)?.Lignes.ToArray();

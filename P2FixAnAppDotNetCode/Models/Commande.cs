@@ -10,7 +10,7 @@ namespace P2FixAnAppDotNetCode.Models
         [BindNever]
         public int IdCommande { get; set; }
         [BindNever]
-        public ICollection<LignePanier> Lignes { get; set; }
+        public ICollection<LignePanier>? Lignes { get; set; }
 
         [Required(ErrorMessage = "ErrorMissingName")]
         public string Nom { get; set; }
@@ -21,7 +21,7 @@ namespace P2FixAnAppDotNetCode.Models
         [Required(ErrorMessage = "ErrorMissingCity")]
         public string Ville { get; set; }
 
-        public string CodePostal { get; set; }
+        public string? CodePostal { get; set; }
 
         [Required(ErrorMessage = "ErrorMissingCountry")]
         public string Pays { get; set; }
